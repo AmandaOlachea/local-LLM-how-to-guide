@@ -1,6 +1,6 @@
 # 1. Before installing anything
 
-I would start by checking the computer rather than downloading a huge model and hoping it runs.
+Start by checking the computer before downloading a model.
 
 ## Check Docker
 
