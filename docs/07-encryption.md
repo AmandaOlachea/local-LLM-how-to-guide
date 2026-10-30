@@ -6,7 +6,7 @@ There are two separate problems: protecting files on the drive, and protecting t
 
 ## Encryption at rest
 
-For a dedicated Linux machine, I would use LUKS2 on a separate data volume. **This example destroys everything on the selected partition. Do not run it against an existing drive or your main system disk.** Back up and verify the backup first.
+For a dedicated Linux machine, LUKS2 on a separate data volume is one approach. **This example destroys everything on the selected partition. Do not run it against an existing drive or your main system disk.** Back up and verify the backup first.
 
 Find the correct disk and partition:
 
@@ -35,7 +35,7 @@ Important: LUKS protects data when the encrypted volume is locked. It does not s
 
 For local testing, the API binds to 127.0.0.1. That means I can reach it from the host without publishing it to the network.
 
-If I later need access from another computer, I would put an authenticated TLS reverse proxy in front of it rather than exposing the Ollama port directly.
+If I later need access from another computer, an authenticated TLS reverse proxy can be placed in front of it rather than exposing the Ollama port directly.
 
 Check the current binding:
 
@@ -49,7 +49,7 @@ For a remote deployment, I would verify the certificate and TLS connection with:
 curl --fail --verbose https://YOUR_INTERNAL_LLM_HOST/api/version
 ```
 
-This command is a future verification example. It will not work until a valid HTTPS endpoint and authentication setup exist. I would never use `curl -k` as proof that certificate validation is working.
+This command is a future verification example. It will not work until a valid HTTPS endpoint and authentication setup exist. Do not use `curl -k` as proof that certificate validation is working.
 
 ## What I would test
 
