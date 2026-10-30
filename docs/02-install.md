@@ -1,6 +1,6 @@
 # 2. Get Ollama running
 
-I'm using Docker here so I can keep the setup in one file and make it easier to reproduce.
+This example uses Docker so the setup can be reproduced from a single Compose file.
 
 From the repository directory:
 
