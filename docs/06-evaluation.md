@@ -1,15 +1,24 @@
-# 6. Test the model instead of just chatting with it
+# 6. Model evaluation
 
-I want to make this part more useful than asking the model a few questions and deciding it seems good.
+Getting a model to respond is one step. I also want a repeatable way to test whether its responses are useful, consistent, and safe for the intended task.
 
-The included script sends a small set of prompts to the local API and saves the responses as JSON. It checks whether the model follows a simple output instruction and gives me a place to review failures.
-
-Run it after downloading the model:
+The example script sends a small set of synthetic prompts to the local Ollama API and saves the results. These are simple smoke tests that can be expanded into a larger QA suite.
 
 ```bash
 python3 scripts/evaluate.py
 ```
 
-This is an initial smoke test, not a validated benchmark. I'll eventually add more cases for prompt injection, unsupported claims, privacy-sensitive requests, and consistency across repeated runs.
+## Areas worth evaluating
 
-I also want to document what I expected, what actually happened, and whether I can reproduce the result.
+- Instruction following and output formatting
+- Factual accuracy and unsupported claims
+- Prompt injection resistance
+- Handling of privacy-sensitive requests
+- Consistency across repeated runs
+- Latency and resource usage
+
+## Recording results
+
+For each test, record the model version, prompt, expected behavior, actual response, pass criteria, and any relevant notes. That makes it easier to compare changes without relying on memory or impressions.
+
+The included script covers only a small part of this list. More complete testing requires additional cases and defined evaluation criteria.
