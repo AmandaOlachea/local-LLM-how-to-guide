@@ -41,3 +41,13 @@ The repository contains a starting configuration and tests. I haven't recorded a
 - [HHS: HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html)
 - [NIST SP 800-66 Rev. 2](https://csrc.nist.gov/pubs/sp/800/66/r2/final)
 - [Ollama documentation](https://docs.ollama.com/)
+
+## Going further with security
+
+After getting the model running, I wanted to work through the parts that are easy to overlook:
+
+7. [Encryption at rest and in transit](docs/07-encryption.md)
+8. [Authentication, permissions, and audit logs](docs/08-access-and-auditing.md)
+9. [Security validation and evidence](docs/09-validation.md)
+
+These are walkthroughs and test plans. The starter Compose file is still a local development example, so the additional controls have to be configured and verified before using it for anything sensitive.
