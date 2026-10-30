@@ -12,11 +12,11 @@ The example binds to `127.0.0.1`, so it is intended for local access only.
 
 ## Think about the data
 
-I would trace where prompts, responses, model files, logs, and backups might be stored. Docker logs and any future web interface need to be part of that review.
+Trace where prompts, responses, model files, logs, and backups might be stored. Docker logs and any future web interface need to be part of that review.
 
 ## What this example doesn't add
 
-There is no multi-user authentication, role-based access control, centralized audit trail, TLS termination, or backup policy here. I would not connect it to real healthcare data in this state.
+There is no multi-user authentication, role-based access control, centralized audit trail, TLS termination, or backup policy here. This example configuration should not be used with real healthcare data without the necessary controls and organizational review.
 
 ## Before expanding it
 
