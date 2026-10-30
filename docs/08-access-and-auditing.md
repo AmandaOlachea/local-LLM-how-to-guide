@@ -4,9 +4,9 @@ The local Ollama API does not give me a complete user management system. If I wa
 
 ## Start with the network
 
-I would keep Ollama on loopback and put any user-facing application behind an authenticated gateway. That gateway should enforce authentication before requests reach the model.
+Keep Ollama on loopback and place any user-facing application behind an authenticated gateway. That gateway should enforce authentication before requests reach the model.
 
-I would also avoid giving ordinary users direct Docker access. Membership in the Docker group can effectively grant root-level control of the host.
+Avoid giving ordinary users direct Docker access. Membership in the Docker group can effectively grant root-level control of the host.
 
 ## User access
 
@@ -20,13 +20,13 @@ For a real multi-user system, I would want:
 
 ## Audit logs
 
-I would log who accessed the application, when, what operation they performed, and whether it succeeded. I would avoid logging raw prompts or responses by default because they might contain sensitive information.
+Log who accessed the application, when, what operation they performed, and whether it succeeded. Avoid logging raw prompts or responses by default because they might contain sensitive information.
 
 Logs need access restrictions, retention rules, protection from unauthorized changes, and a review process. Logging everything without a plan creates another data exposure risk.
 
 ## Secrets
 
-I would keep credentials out of Compose files and source control. Environment variables can still be exposed through process or container inspection, so I'd consider a dedicated secrets mechanism and restrict who can administer the host.
+Keep credentials out of Compose files and source control. Environment variables can still be exposed through process or container inspection, so consider a dedicated secrets mechanism and restrict who can administer the host.
 
 ## Checks before adding users
 
