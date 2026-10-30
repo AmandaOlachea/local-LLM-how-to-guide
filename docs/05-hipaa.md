@@ -1,24 +1,29 @@
-# 5. Where HIPAA fits in
+# 5. HIPAA safeguards and local LLMs
 
-This was one of the reasons I wanted to build the guide. I work with systems where privacy and data handling matter, and I wanted to understand how the requirements translate into technical decisions.
+When working with systems that may handle electronic protected health information (ePHI), the model is only one part of the environment. I wanted this guide to connect the technical setup with the larger privacy and security requirements.
 
-The HIPAA Security Rule covers administrative, physical, and technical safeguards for electronic protected health information (ePHI). A local model is just one component of a larger system.
+The HIPAA Security Rule includes administrative, physical, and technical safeguards. The exact controls and documentation depend on the organization, its risk analysis, and how the system is used.
 
-| Area | What I'd need to think through |
+| Area | Questions to address |
 | --- | --- |
-| Risk analysis | What data is involved, who can access it, and what could go wrong? |
-| Access controls | How are users identified and permissions managed? |
-| Audit controls | Can the organization review activity without collecting unnecessary sensitive data? |
-| Integrity | How do we prevent or detect unauthorized changes? |
-| Transmission security | How is data protected when it travels between systems? |
-| Physical safeguards | Who can access the machine and storage? |
+| Risk analysis | What data enters the system, where does it go, and what could expose it? |
+| Access control | How are users identified and authorized? |
+| Audit controls | What activity needs to be recorded and reviewed? |
+| Integrity | How are unauthorized changes detected or prevented? |
+| Transmission security | How is data protected between services and users? |
+| Physical security | Who can access the equipment and storage? |
 | Contingency planning | How are backups, recovery, and outages handled? |
-| Policies and training | Who is responsible for operating and reviewing the system? |
+| Policies and training | Who is responsible for administration and oversight? |
 
-These are discussion points, not completed controls. The example deployment is not intended to process ePHI.
+## Applying this to a local LLM
 
-For a real healthcare deployment, the organization would also need to assess vendors and business associate arrangements where applicable, document risk decisions, and evaluate its own environment.
+I would review the complete data path, including the user interface, API, model runtime, storage, logs, backups, and any connected applications. A local inference endpoint can help with data control, but the surrounding architecture still matters.
 
-I used the [HHS Security Rule summary](https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html) and [NIST SP 800-66 Rev. 2](https://csrc.nist.gov/pubs/sp/800/66/r2/final) as references.
+The chapters on encryption, access management, and validation provide examples of how to document and check technical safeguards.
 
-Next: [evaluation](06-evaluation.md).
+## References
+
+- [HHS Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html)
+- [NIST SP 800-66 Rev. 2](https://csrc.nist.gov/pubs/sp/800/66/r2/final)
+
+Next: [model evaluation](06-evaluation.md).
